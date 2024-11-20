@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 export default async function Page() {
-  const posts = await getPosts(); // Récupération côté serveur (SSR)
+  const posts = await getPosts();
 
   return (
     <Suspense fallback={<Loading />}>
@@ -10,7 +10,6 @@ export default async function Page() {
   );
 }
 
-// Fonction pour récupérer les posts
 async function getPosts() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store",
@@ -18,7 +17,6 @@ async function getPosts() {
   return response.json();
 }
 
-// Composant d'affichage principal
 function PostTable({
   posts,
 }: {

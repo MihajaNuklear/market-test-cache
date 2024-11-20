@@ -1,6 +1,6 @@
 export default async function Page() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    cache: "no-store", // Évite la mise en cache pour obtenir des données à jour
+    cache: "no-store",
   });
 
   if (!response.ok) {

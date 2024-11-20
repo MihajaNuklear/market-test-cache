@@ -10,6 +10,7 @@ export default async function Page() {
   );
 }
 
+// Fonction pour récupérer les posts
 async function getPosts() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store",
@@ -17,6 +18,7 @@ async function getPosts() {
   return response.json();
 }
 
+// Composant d'affichage principal
 function PostTable({
   posts,
 }: {
@@ -49,9 +51,5 @@ function PostTable({
 
 // Composant de chargement
 function Loading() {
-  return (
-    <div className="text-center h-screen bg-red-700">
-      Chargement en cours...
-    </div>
-  );
+  return <div className="text-center">Chargement en cours...</div>;
 }
